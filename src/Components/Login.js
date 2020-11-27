@@ -35,12 +35,6 @@ class Login extends Component {
     }
 
     render() {
-        const {token} = this.props;
-
-        if (token) {
-            this.props.history.push('/')
-        }
-
         return (
             <div className='container login-page'>
                 <form onSubmit={this.submitHandle}>

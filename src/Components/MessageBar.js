@@ -7,11 +7,30 @@ import {showMessage, hideMessage} from "../Actions";
 class MessageBar extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            timeoutId: -1
+        }
     }
 
     clickHandle = e => {
         e.preventDefault()
         this.props.hideMessage()
+    }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.msgObj.message !== prevProps.msgObj.message) // Check if it's a new user, you can also use some unique property, like the ID  (this.props.user.id !== prevProps.user.id)
+        {
+            const timeoutId = setTimeout(() => {
+                this.props.hideMessage()
+            }, 10000)
+
+            this.setState({timeoutId})
+        }
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.state.timeoutId)
     }
 
     render() {

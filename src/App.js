@@ -6,6 +6,7 @@ import {getToken, logout} from "./Actions";
 import MessageBar from "./Components/MessageBar";
 
 import './App.sass'
+import Home from "./Components/Home";
 
 class App extends Component {
   componentDidMount = () => {
@@ -44,9 +45,11 @@ class App extends Component {
             </div>
                 <Switch>
                     <Route exact path="/">
-                        {!token ? <Redirect to="/login" /> : ''}
+                        {!token ? <Redirect to="/login" /> : <Home/>}
                     </Route>
-                   <Route path="/login" component={Login} />
+                   <Route path="/login">
+                       {token ? <Redirect to="/" /> : <Login/>}
+                   </Route>
                 </Switch>
             <MessageBar/>
         </BrowserRouter>

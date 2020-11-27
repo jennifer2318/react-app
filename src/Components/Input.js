@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {validateString} from "../Helpers/validator";
+import {validateString, validateUsername} from "../Helpers/validator";
 
 class Input extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            value: '',
+            value: this.props.value,
             valid: false,
             err: 'Заполните поле',
         }
@@ -17,7 +17,18 @@ class Input extends Component {
     changeHandler = e => {
         const {value} = e.target;
         const name = this.props.name;
-        const {valid, err} = validateString(value);
+
+        let validator
+
+        switch (this.props.validType) {
+            case 'username' : {
+                validator = validateUsername(value)
+                break
+            }
+            default: validator = validateString(value)
+        }
+
+        const {valid, err} = validator
 
         this.setState({value, valid, err})
 
@@ -26,10 +37,10 @@ class Input extends Component {
 
     render() {
         return (
-            <div className={classNames(this.state.valid ? 'valid' : 'no-valid', `${this.props.name.toLowerCase()}-filed`, 'input')}>
+            <div className={classNames(this.state.valid ? 'valid' : 'no-valid', `${this.props.name.toLowerCase()}-filed`, 'input', this.props.className)}>
                 <label>
                     {
-                        this.props.label ? <span>this.props.label</span> : null
+                        this.props.label ? <span className='label'>{this.props.label}</span> : null
                     }
                     <input
                         type={this.props.type ?? 'text'}
@@ -50,6 +61,10 @@ class Input extends Component {
 Input.propTypes = {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    placeholder: PropTypes.string,
+    validType: PropTypes.string,
+    value: PropTypes.string,
 }
 
 export default Input;
