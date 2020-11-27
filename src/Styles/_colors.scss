@@ -1,0 +1,15 @@
+:root {
+    --color-text: 51, 51, 51;
+    --color-white: 255, 255, 255;
+    --color-black: 0, 0, 0;
+    --color-accent: 54, 94, 220;
+    --color-error: 237, 67, 55;
+    --color-info: 33, 138, 255;
+}
+
+$text: var(--color-text);
+$white: var(--color-white);
+$black: var(--color-black);
+$accent: var(--color-accent);
+$error: var(--color-error);
+$info: var(--color-info);

@@ -1,0 +1,231 @@
+@import 'Styles/mixins'
+@import 'Styles/colors'
+@import 'Styles/normolize'
+@import 'Styles/fonts'
+
+*
+  margin: 0
+  padding: 0
+
+// Base grid styles
+*, :after, :before
+  box-sizing: border-box
+
+img
+  user-select: none
+  transition: opacity .5s ease
+
+iframe
+  transition: opacity .5s ease
+
+body
+  font: 15px/25px Montserrat,Arial,sans-serif
+  color: rgba($text, 1)
+  position: relative
+  background: rgba($white, 1)
+
+form
+  background: rgba($white, 1)
+  border-radius: 5px
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.2)
+  padding: 20px
+
+.header
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.1)
+  padding: 15px 0
+  margin-bottom: 20px
+  ul
+    display: flex
+    justify-content: center
+    align-items: center
+    li
+      list-style: none
+      border-radius: 3px
+      margin: 0 15px
+      a, a:visited, a:focus
+        padding: 6px 25px
+        font-size: 13px
+        +bold
+        letter-spacing: 1.2px
+        color: #444
+        line-height: 18px
+        &:hover
+          color: rgba($accent, 1)
+
+.container
+  max-width: 1440px
+  margin: auto
+  position: relative
+
+.container-fluid
+  width: 100%
+  position: relative
+
+.container-accent
+  background: rgba($accent, 1)
+
+.section
+  padding-top: 30px
+  padding-bottom: 30px
+  &__top
+    font-size: 10px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 30px
+    &-container
+      display: flex
+  &__title
+    font-size: 26px
+    margin: 0
+    +normal
+    &:first-letter
+      text-transform: uppercase
+
+
+$bp-full: 1480px
+$bp-lg: 1200px
+$bp-md: 991px
+$bp-sm: 768px
+$bp-xs: 576px
+
+@media (max-width: $bp-full)
+  .container
+    max-width: 1170px
+
+@media (max-width: $bp-lg)
+  .container
+    max-width: 960px
+
+@media (max-width: $bp-md)
+  .container
+    max-width: 750px
+
+@media ( max-width: $bp-sm )
+  .container
+    max-width: 550px
+
+@media ( max-width: $bp-xs )
+  .container
+    max-width: 100%
+    padding: 0 20px
+
+
+body::-webkit-scrollbar-track
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  background-color: #F5F5F5
+
+body::-webkit-scrollbar
+  width: 8px
+  background-color: #F5F5F5
+
+body::-webkit-scrollbar-thumb
+  background-color: rgba($accent, 1)
+
+button, .button, input[type='submit']
+  border: none
+  outline: none
+  text-transform: uppercase
+  text-decoration: none
+  transition: .3s ease
+  color: rgba($text, 1)
+  display: flex
+  align-items: center
+  appearance: none
+  border-radius: 3px
+  padding: 8px 12px
+  &:hover
+    color: rgba($accent, 1)
+    cursor: pointer
+  &__icon
+    margin-right: 10px
+    font-size: 16px
+    line-height: 18px
+
+.bordered-btn
+  border: 1px solid rgba($accent, 1)
+  padding: 8px 15px
+  background: rgba($white, 1)
+  font-size: 12px
+  color: rgba($accent, 1)
+  &:hover
+    color: rgba($white, 1)
+    background: rgba($accent, 1)
+
+.message-bar
+  position: fixed
+  box-shadow: 0 -2px 10px 0 rgba(0,0,0,.1)
+  left: 0
+  bottom: 0
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 10px 15px
+  font-size: 16px
+  line-height: 18px
+  .close
+    padding: 0 6px
+    &:before
+      content: "\00d7"
+      font-size: 24px
+      line-height: 24px
+
+.message-bar.err
+  background: rgba($error, 1)
+  color: rgba($white, 1)
+
+.message-bar.info
+  background: rgba($info, 1)
+  color: rgba($white, 1)
+
+.input
+  display: flex
+  flex-direction: column
+  margin: 10px 0
+  input
+    outline: none
+    padding: 6px 8px
+    background: #fafafa
+    border: 1px solid #ececec
+    color: #444
+    border-radius: 5px
+    font-size: .867em
+    width: 100%
+    height: 100%
+    &::placeholder
+      color: #b8b8b8
+  .error-aria
+    padding: 5px 8px
+    font-size: 10px
+    line-height: 12px
+    color: rgba($error, 1)
+
+.login-page
+  form
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: rgba($accent, 1)
+    margin: 0 auto
+    max-width: 640px
+    color: rgba($white, 1)
+    input[type='submit']
+      margin-top: 15px
+    .input
+      input
+        &::placeholder
+          color: rgba($text, 8)
+      .error-aria
+        background: rgba($white, 1)
+        margin-top: -3px
+        border-top: 1px solid #ececec
+        border-bottom-left-radius: 3px
+        border-bottom-right-radius: 3px
+
+.header-container
+  display: flex
+  justify-content: center
+  align-items: center
+  button
+    margin: 0 15px
