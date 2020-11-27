@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-app/static/css/main.053af39a.chunk.css",
+    "main.js": "/react-app/static/js/main.8132121d.chunk.js",
+    "main.js.map": "/react-app/static/js/main.8132121d.chunk.js.map",
+    "runtime-main.js": "/react-app/static/js/runtime-main.e0681040.js",
+    "runtime-main.js.map": "/react-app/static/js/runtime-main.e0681040.js.map",
+    "static/js/2.0ab6517a.chunk.js": "/react-app/static/js/2.0ab6517a.chunk.js",
+    "static/js/2.0ab6517a.chunk.js.map": "/react-app/static/js/2.0ab6517a.chunk.js.map",
+    "static/js/3.2d901f9c.chunk.js": "/react-app/static/js/3.2d901f9c.chunk.js",
+    "static/js/3.2d901f9c.chunk.js.map": "/react-app/static/js/3.2d901f9c.chunk.js.map",
+    "index.html": "/react-app/index.html",
+    "static/css/main.053af39a.chunk.css.map": "/react-app/static/css/main.053af39a.chunk.css.map",
+    "static/js/2.0ab6517a.chunk.js.LICENSE.txt": "/react-app/static/js/2.0ab6517a.chunk.js.LICENSE.txt",
+    "static/media/App.sass": "/react-app/static/media/Montserrat-ThinItalic.ef61e93f.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e0681040.js",
+    "static/js/2.0ab6517a.chunk.js",
+    "static/css/main.053af39a.chunk.css",
+    "static/js/main.8132121d.chunk.js"
+  ]
+}
