@@ -282,7 +282,10 @@ button, .button, input[type='submit']
       height: 1px
       background: rgba($black, .2)
       left: 0
-  .header-field.active-topA
+  .header-field
+    &:hover
+      cursor: pointer
+  .header-field.active-top
     &:after
       content: '▼'
   .header-field.active-down
@@ -292,4 +295,24 @@ button, .button, input[type='submit']
 .filter-field
   margin-bottom: 60px
 
-  //.data-row span, .data-table-header span
+@media (max-width: $bp-md)
+  table
+    tr, th
+      display: flex
+      flex-direction: column
+    tr
+      &:not(:first-child)
+        margin-top: 40px
+
+@media ( max-width: $bp-sm )
+  h1
+    font-size: 1.4em
+  button, .button, input[type='submit']
+    font-size: 12px
+  .message-bar
+    font-size: 12px
+    line-height: 14px
+    .close
+      &:before
+        font-size: 18px
+        line-height: 18px
